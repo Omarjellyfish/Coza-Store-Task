@@ -1,0 +1,32 @@
+.Login{
+    background-color:bisque;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    margin:auto
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.input-section{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+.goto-signup-btn{
+    cursor: pointer;
+    padding: 10px;
+    background-color: mediumaquamarine;
+    border-radius: 5px;
+}
+.goto-signup-btn:hover{
+    background-color: rgb(205, 202, 102);
+    transition: 0.5s;
+
+}

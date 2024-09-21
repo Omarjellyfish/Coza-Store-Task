@@ -1,0 +1,51 @@
+nav{
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    z-index: 10000000000;
+}
+.logo{
+    display: flex;
+    grid-column: 1/3;
+    align-items: center;
+    padding-left:30px ;
+}
+.util{
+    grid-column: 3/10;
+    display: flex;
+    justify-content: flex-start;
+    gap: 30px;
+    padding-right:10px ;
+    align-items: center;
+}
+.util a{
+    text-decoration: none;
+    color:#717171;
+}
+.util a:hover{
+    color:rgb(118, 158, 234);
+    transition: 0.4s;
+}
+.search-prof-cart{
+    padding-left: 10px;
+    grid-column: 10/14;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 40px;
+}
+.search-icon:hover{
+    color:rgb(118, 158, 234);
+    transition: 0.4s;
+}
+.hidden{
+    display: none;
+}
+
+.util{
+    list-style: none;
+}
