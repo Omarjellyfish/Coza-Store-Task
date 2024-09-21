@@ -2,12 +2,15 @@ import { useState } from 'react'
 import './Login.css'
 import SignUp from './SignUp';
 import { useNavigate } from 'react-router-dom'; 
+import { useContext } from "react";
+import { LoginContext } from '../../Context/LoginContext'
 export default function Login(){
+    const {setIsLoggedIn } = useContext(LoginContext);
     const [tEmail,setTEmail]=useState('')
     const [tPassword,setTPassword]=useState('')
     const [isLogin,setIsLogin]=useState(true)
     const [loginError,setLoginError]=useState('')
-    localStorage.setItem('loginStatus', false);
+
     const Navigate=useNavigate();
 
     function handleLogin(e){
@@ -17,7 +20,7 @@ export default function Login(){
         const realPassword = localStorage.getItem('userPassword');
 
         if(tEmail==realEmail && realPassword==tPassword){
-            localStorage.setItem('loginStatus', true);
+            setIsLoggedIn(true);
             Navigate('/')
         }else{
             setLoginError('Invalid email or password')

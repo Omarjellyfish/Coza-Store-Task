@@ -62,3 +62,14 @@ nav {
 .util {
     list-style: none;
 }
+.log-btn{
+    padding: 5px 10px 5px 10px;
+    color: #333;
+    background-color: rgb(213, 219, 255);
+    border-radius: 5px;
+    border: none;
+}
+.log-btn:hover{
+    background-color: rgb(241, 143, 143);
+    transition: 0.5s;
+}

@@ -1,19 +1,20 @@
 import './Nav.css'
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link,useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass,faCartShopping,faHeart  } from '@fortawesome/free-solid-svg-icons';
-import { useEffect,useState } from 'react';
+import { useContext } from "react";
+import { LoginContext } from '../../Context/LoginContext';
 export default function Nav(){
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const loginStatus = localStorage.getItem("loginStatus");
-    //current falsey logic, need to make this happen at login
-    useEffect(() => {
-        setIsLoggedIn(true);
-    }, [loginStatus,isLoggedIn]);
+    const { isLoggedIn, setIsLoggedIn } = useContext(LoginContext);
+
+    const Navigate=useNavigate()
+
     function handleLogout(){
-        localStorage.setItem("loginStatus", 'false');
         setIsLoggedIn(false);
+        console.log('hello from logout')
+        Navigate('/login')
     }
+
     return(
         <>
         <nav>
@@ -31,7 +32,8 @@ export default function Nav(){
             <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
             {isLoggedIn && <FontAwesomeIcon icon={faCartShopping} className='search-icon'/>}
             {isLoggedIn && <FontAwesomeIcon icon={faHeart}  className='search-icon' />}
-            <Link to={'./Login'} onClick={()=>{handleLogout}} >Login</Link>
+            <button onClick={()=>{handleLogout()}} className='log-btn'>{isLoggedIn ?('Log Out'):('Log In')}</button>
+            {/* fixed*/}
         </div>
     </nav>
     <Outlet/>
