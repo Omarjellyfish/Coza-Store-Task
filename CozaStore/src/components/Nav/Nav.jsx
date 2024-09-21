@@ -5,11 +5,15 @@ import { faMagnifyingGlass,faCartShopping,faHeart  } from '@fortawesome/free-sol
 import { useEffect,useState } from 'react';
 export default function Nav(){
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const loginStatus = localStorage.getItem("loginStatus");
     //current falsey logic, need to make this happen at login
     useEffect(() => {
-        const loginStatus = localStorage.getItem("loginStatus");
-        setIsLoggedIn(loginStatus === 'true');
-    }, []);
+        setIsLoggedIn(true);
+    }, [loginStatus,isLoggedIn]);
+    function handleLogout(){
+        localStorage.setItem("loginStatus", 'false');
+        setIsLoggedIn(false);
+    }
     return(
         <>
         <nav>
@@ -27,7 +31,7 @@ export default function Nav(){
             <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
             {isLoggedIn && <FontAwesomeIcon icon={faCartShopping} />}
             {isLoggedIn && <FontAwesomeIcon icon={faHeart} />}
-            <Link to={'./Login'} >Login</Link>
+            <Link to={'./Login'} onClick={()=>{handleLogout}} >Login</Link>
         </div>
     </nav>
     <Outlet/>

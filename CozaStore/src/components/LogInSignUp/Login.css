@@ -1,32 +1,83 @@
-.Login{
-    background-color:bisque;
-    width: 400px;
-    height: 400px;
-    padding: 10px;
-    margin:auto
+body {
+    background-color: #f0f4f8;
+    font-family: 'Arial', sans-serif;
 }
-.input{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
+.Login {
+    background-color: #ffffff;
+    width: 400px;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s; 
 }
-.input-section{
+
+.Login:hover {
+    transform: scale(1.02); 
+}
+
+.input {
     display: flex;
     flex-direction: column;
-    margin: 10px;
     justify-content: center;
     align-items: center;
 }
-.goto-signup-btn{
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0; 
+    width: 100%; 
+}
+
+label {
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px; 
+    width: 100%; 
+    transition: border-color 0.3s; 
+}
+
+input:focus {
+    border-color: mediumaquamarine; 
+    outline: none; 
+}
+
+button.submit-btn {
+    padding: 10px;
+    background-color: mediumaquamarine;
+    border: none;
+    border-radius: 5px;
+    color: white; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button.submit-btn:hover {
+    background-color: rgb(205, 202, 102); 
+    transform: scale(1.05); 
+}
+
+.goto-signup-btn {
     cursor: pointer;
     padding: 10px;
     background-color: mediumaquamarine;
     border-radius: 5px;
+    color: white; 
+    font-weight: bold;
+    text-align: center; 
+    transition: background-color 0.3s; 
 }
-.goto-signup-btn:hover{
+
+.goto-signup-btn:hover {
     background-color: rgb(205, 202, 102);
     transition: 0.5s;
-
 }
