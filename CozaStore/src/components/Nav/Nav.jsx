@@ -29,8 +29,8 @@ export default function Nav(){
         
         <div className="search-prof-cart">
             <FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon' />
-            {isLoggedIn && <FontAwesomeIcon icon={faCartShopping} />}
-            {isLoggedIn && <FontAwesomeIcon icon={faHeart} />}
+            {isLoggedIn && <FontAwesomeIcon icon={faCartShopping} className='search-icon'/>}
+            {isLoggedIn && <FontAwesomeIcon icon={faHeart}  className='search-icon' />}
             <Link to={'./Login'} onClick={()=>{handleLogout}} >Login</Link>
         </div>
     </nav>
