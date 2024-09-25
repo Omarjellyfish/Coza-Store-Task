@@ -14,10 +14,9 @@ function App() {
     <>
     <LoginContext.Provider value={{isLoggedIn,setIsLoggedIn}}>
       <BrowserRouter>
+      <Nav/>
         <Routes>
-          <Route path='/' element={<Nav/>}>
-            <Route path='/Login' element={<Login/>}/>
-          </Route>
+          <Route path='/Login' element={<Login/>}/>
         </Routes>
         <Footer/>
       </BrowserRouter>
