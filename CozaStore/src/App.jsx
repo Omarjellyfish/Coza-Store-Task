@@ -6,6 +6,7 @@ import Nav from './components/Nav/Nav';
 import  Login from './components/LogInSignUp/Login';
 import Shop from './components/Shop/Shop';
 import { LoginContext } from './Context/LoginContext';
+import Footer from './components/Footer/Footer'
 function App() {
   const [isLoggedIn,setIsLoggedIn]=useState(false)
 
@@ -16,9 +17,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Nav/>}>
             <Route path='/Login' element={<Login/>}/>
-            <Route path='/Shop' element={<Shop/>}/>
           </Route>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </LoginContext.Provider>
     </>
